@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "projects": {
+    "orca-backend": "apps/orca-backend"
+  }
+}
