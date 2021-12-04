@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@troll-cave/app-catalog-backend": [
+        "libs/app-catalog-backend/src/index.ts"
+      ],
+      "@troll-cave/data-backend": ["libs/data-backend/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

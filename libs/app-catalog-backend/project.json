@@ -1,0 +1,34 @@
+{
+  "root": "libs/app-catalog-backend",
+  "sourceRoot": "libs/app-catalog-backend/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/app-catalog-backend/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/app-catalog-backend"],
+      "options": {
+        "jestConfig": "libs/app-catalog-backend/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/app-catalog-backend",
+        "tsConfig": "libs/app-catalog-backend/tsconfig.lib.json",
+        "packageJson": "libs/app-catalog-backend/package.json",
+        "main": "libs/app-catalog-backend/src/index.ts",
+        "assets": ["libs/app-catalog-backend/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

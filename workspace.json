@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "app-catalog-backend": "libs/app-catalog-backend",
+    "data-backend": "libs/data-backend",
     "orca-backend": "apps/orca-backend"
   }
 }

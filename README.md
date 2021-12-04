@@ -1,4 +1,5 @@
-
+`nx g library --publishable --service true --importPath @troll-cave/app-catalog-backend`
+`nx g controller  --project app-catalog-backend`
 
 # OrcaBackend
 
