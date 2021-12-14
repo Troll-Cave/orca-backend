@@ -45,6 +45,14 @@ export class SchemaService {
   addSchema(schema: Schema) {
     // Don't leave duplicate schemas
     this.schemas = this.schemas.filter(x => x.name !== schema.name);
+    const base = this.schemas.filter(x => x.name === schema.extends || 'base')[0] || null;
+
+    if (base !== null) {
+      // extend the model with the base attributes
+      schema.schema.attributes = [...(base.schema?.attributes || []), ...(schema.schema?.attributes || [])];
+      schema.extraData.attributes = [...(base.extraData?.attributes || []), ...(schema.extraData?.attributes || [])];
+    }
+
     this.schemas.push(schema);
   }
 

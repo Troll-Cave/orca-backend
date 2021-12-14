@@ -15,7 +15,8 @@ const defaultSchema: Schema = {
     attributes: [
       {
         name: 'owner',
-        type: 'custom'
+        type: 'custom',
+        customType: 'owner'
       }
     ]
   }

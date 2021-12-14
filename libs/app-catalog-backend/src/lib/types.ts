@@ -6,7 +6,12 @@ export interface SchemaBase {
 
 // custom type attributes aren't added to the main edit form.
 export interface SchemaAttribute extends SchemaBase {
-  type: 'number' | 'string' | 'bool' | 'record' | 'custom';
+  type: 'number' | 'string' | 'bool' | 'record';
+}
+
+export interface SchemaCustom extends SchemaBase {
+  type: 'custom';
+  customType: string;
 }
 
 export interface SchemaArray extends SchemaBase {
@@ -19,7 +24,7 @@ export interface SchemaObject extends SchemaBase {
   attributes: SchemaItem[]
 }
 
-export type SchemaItem = SchemaArray | SchemaAttribute | SchemaObject;
+export type SchemaItem = SchemaArray | SchemaAttribute | SchemaObject | SchemaCustom;
 
 /**
  * @description a defined schema
